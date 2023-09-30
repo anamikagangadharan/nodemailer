@@ -9,8 +9,8 @@ let transporter = nodemailer.createTransport({
 });
 
 let mailOptions = {
-    from: 'octacoderfyi@gmail.com',
-    to: ['octacoderfyi@gmail.com','pitar.petroli@gmail.com'],
+    from: 'octacoderfyi@gmail.com', // Replace this with your Email Id.
+    to: ['octacoderfyi@gmail.com','pitar.petroli@gmail.com'], // Replace this recipient Email address.
     cc: 'octacoderfyi@gmail.com',
     subject: 'Email With Attachments Testing',
     html: `<h1 style="color: Aqua">Welcome To OctaCoder</h1> <p>Please Subscribe OctaCoder Youtube Channel</p>
@@ -19,19 +19,19 @@ let mailOptions = {
     attachments:[
         {
             filename: 'image.png',
-            path: './Files/thumbnail.png'
+            path: './Files/thumbnail.png' //replace files path according to your files
         },
         {
             filename: 'Document.doc',
-            path: './Files/htmlDoc.docx'
+            path: './Files/htmlDoc.docx' //replace files path according to your files
         },
         {
             filename: 'HtmlPDF.pdf',
-            path: './Files/htmlAllTag.pdf'
+            path: './Files/htmlAllTag.pdf' //replace files path according to your files
         },
         {
             filename: 'nodejs.png',
-            path: './Files/nodejs.png'
+            path: './Files/nodejs.png' //replace files path according to your files
         }
     ]
 };
