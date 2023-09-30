@@ -9,8 +9,8 @@ let transporter = nodemailer.createTransport({
 });
 
 let mailOptions = {
-    from: 'octacoderfyi@gmail.com',
-    to: 'octacoderfyi@gmail.com',
+    from: 'octacoderfyi@gmail.com', // Replace this with your Email Id.
+    to: 'octacoderfyi@gmail.com', // Replace this with Recipient Email Id.
     subject: 'Testing Nodemailer',
     html: '<h1>Welcome to OctaCoder</h1> Please Subscribe OctaCoder Youtube Channel For Learning Web development! <br><a href="https://www.youtube.com/@octacoder">OctaCoder Youtube</a>'
 
