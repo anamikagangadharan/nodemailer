@@ -1,26 +1,32 @@
+const fs = require('fs');
 const nodemailer = require('nodemailer');
 
-let transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'octacoderfyi@gmail.com', // Replace this with your Email Id.
-        pass: 'omvmfohxzbgmexrx' // Replace this with your Password.
+        user: 'anamikadevi.g@invicious.in',
+        pass: 'nkosamgzeixqzjog'
     }
 });
 
-let mailOptions = {
-    from: 'octacoderfyi@gmail.com', // Replace this with your Email Id.
-    to: 'octacoderfyi@gmail.com', // Replace this with Recipient Email Id.
+const mailOptions = {
+    from: 'anamikadevi.g@invicious.in',
+    to: 'anamikadevi.g@invicious.in',
     subject: 'Testing Nodemailer',
-    html: '<h1>Welcome to OctaCoder</h1> Please Subscribe OctaCoder Youtube Channel For Learning Web development! <br><a href="https://www.youtube.com/@octacoder">OctaCoder Youtube</a>'
-
+    html: '<h1>anamika_gangadharan</h1> hi this is anu. youtube channel refernce link <br><a href="https://www.youtube.com/@octacoder">OctaCoder Youtube</a> <br><img src="cid:my-image" alt="My Image" />',
+    attachments: [
+        {
+            filename: 'image.png',
+            path: 'C:\\Users\\anami\\Downloads\\image.png',
+            cid: 'image.png' //same cid value as in the html img src
+        }
+    ]
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
-    if(error){
-        console.log('Error Occured' + error)
+    if (error) {
+        console.log('Error sending email:', error);
+    } else {
+        console.log('Email sent:', info.messageId);
     }
-    else {
-        console.log('Successfully Email Sent To:' + mailOptions.to, info.response)
-    }
-})
+});
